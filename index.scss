@@ -1,23 +1,66 @@
+@import "common";
+
+/*webfont*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1462432840_5312989.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_1462432840_5312989.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_1462432840_5312989.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/font_1462432840_5312989.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_1462432840_5312989.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont{
+  font-family:"iconfont";
+  font-size:16px;font-style:normal;
+}
+/*webfont*/
+
+/*global variable*/
 $text-black: #333333;
 $text-light-gray: #cccccc;
 $text-gray: #858585;
-$font-darker-gray: #666666;
+$text-darker-gray: #666666;
+
 $line-light-gray: #ebebeb;
 $line-gray: #dedede;
+
 $purple: #cdc0ef;
 $yellow: #f9d57f;
 $pink: #faacbf;
 $blue: #AAD4FB;
 $green: #A8DAB2;
+$gray: #ebebeb;
+$red: #ff0000;
 
-/*for debug*/
-header, nav, main, footer {
-  border: 1px solid $line-gray;
+$big-text: 16px;
+$normal-text: 14px;
+$small-text: 13px;
+$mini-text: 10px;
+/*global variable*/
+
+.callout {
+  border-left: 5px solid $red;
+  padding: 8px;
+  font-size: $small-text;
+  color: $red;
 }
-/*for debug*/
 
 body {
   margin: 0;
+  background: $gray;
+}
+
+header, .top-nav, main, footer {
+  background: white;
+}
+
+header, .top-nav {
+  border-bottom: 1px solid $line-gray;
+}
+
+main, footer {
+  border-top: 1px solid $line-gray;
 }
 
 header {
@@ -26,8 +69,62 @@ header {
 
 nav.top-nav {
 	height: 86px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  a {
+    color: $text-gray;
+    font-size: $small-text;
+    figure {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      span {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+        color: white;
+        margin-bottom: 8px;
+      }
+      margin: 0;
+    }
+  }
+  a:nth-child(1) > figure > span{
+    background: $yellow;
+  }
+  a:nth-child(2) > figure > span{
+    background: $blue;
+  }
+  a:nth-child(3) > figure > span{
+    background: $pink;
+  }
+  a:nth-child(4) > figure > span{
+    background: $purple;
+  }
 }
 
+nav.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 51px;
+  > a {
+    color: $text-gray;
+    font-size: $small-text;
+    > figure {
+      margin: 0;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      >span {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
 nav {
   a {
     display: inline-block;
@@ -37,7 +134,7 @@ nav {
 main {
 	height: 351px;
 	margin-top: 10px;
-  over-scroll-y: auto;
+  overflow-y: auto;
 }
 
 footer {
