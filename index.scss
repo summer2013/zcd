@@ -1,0 +1,50 @@
+$text-black: #333333;
+$text-light-gray: #cccccc;
+$text-gray: #858585;
+$font-darker-gray: #666666;
+$line-light-gray: #ebebeb;
+$line-gray: #dedede;
+$purple: #cdc0ef;
+$yellow: #f9d57f;
+$pink: #faacbf;
+$blue: #AAD4FB;
+$green: #A8DAB2;
+
+/*for debug*/
+header, nav, main, footer {
+  border: 1px solid $line-gray;
+}
+/*for debug*/
+
+body {
+  margin: 0;
+}
+
+header {
+	height: 130px;
+}
+
+nav.top-nav {
+	height: 86px;
+}
+
+nav {
+  a {
+    display: inline-block;
+  }
+}
+
+main {
+	height: 351px;
+	margin-top: 10px;
+  over-scroll-y: auto;
+}
+
+footer {
+	height: 51px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
