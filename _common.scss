@@ -1,0 +1,108 @@
+/*webfont*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1462519334_1059072.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_1462519334_1059072.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_1462519334_1059072.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/font_1462519334_1059072.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_1462519334_1059072.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont{
+  font-family:"iconfont";
+  font-size:16px;font-style:normal;
+}
+/*webfont*/
+
+/*global variable*/
+$text-black: #333333;
+$text-light-gray: #cccccc;
+$text-gray: #858585;
+$text-darker-gray: #666666;
+
+$line-light-gray: #ebebeb;
+$line-gray: #dedede;
+
+$purple: #cdc0ef;
+$yellow: #f9d57f;
+$pink: #faacbf;
+$blue: #AAD4FB;
+$green: #A8DAB2;
+$gray: #ebebeb;
+$red: #ff0000;
+
+$big-text: 16px;
+$normal-text: 14px;
+$small-text: 13px;
+$mini-text: 10px;
+/*global variable*/
+
+
+.callout {
+  border-left: 5px solid $red;
+  border-bottom: 1px solid $line-gray;
+  padding: 8px;
+  font-size: $small-text;
+  color: $red;
+  margin: 0;
+}
+
+/*all kinds of level*/
+.level {
+  display: inline-block;
+  width: 41px;
+  height: 17px;
+  line-height: 17px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  font-size: $small-text;
+  margin-bottom: 7px;
+}
+.level1 {
+  @extend .level;
+  background-color: $green;
+}
+.level2 {
+  @extend .level;
+  background-color: $blue;
+}
+.level3 {
+  @extend .level;
+  background-color: $purple;
+}
+.level4 {
+  @extend .level;
+  background-color: $yellow;
+}
+.level4 {
+  @extend .level;
+  background-color: $pink;
+}
+/*all kinds of level*/
+
+.sign-status {
+  background-color: $pink;
+  color: white;
+  position: absolute;
+  top: 23px;
+  right: -11px;
+  display: inline-block;
+  width: 73px;
+  height: 26px;
+  line-height: 26px;
+  border-radius: 40px;
+  font-size: $normal-text;
+  padding-left: 5px;
+}
+
+
+.property {
+  display: inline-block;
+  font-size: $small-text;
+  >.point+span {
+    color: $red;
+  }
+  >.wd+span {
+    color: $blue;
+  }
+}

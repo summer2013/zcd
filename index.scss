@@ -1,53 +1,5 @@
 @import "common";
 
-/*webfont*/
-@font-face {
-  font-family: 'iconfont';
-  src: url('//at.alicdn.com/t/font_1462432840_5312989.eot'); /* IE9*/
-  src: url('//at.alicdn.com/t/font_1462432840_5312989.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('//at.alicdn.com/t/font_1462432840_5312989.woff') format('woff'), /* chrome、firefox */
-  url('//at.alicdn.com/t/font_1462432840_5312989.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url('//at.alicdn.com/t/font_1462432840_5312989.svg#iconfont') format('svg'); /* iOS 4.1- */
-}
-
-.iconfont{
-  font-family:"iconfont";
-  font-size:16px;font-style:normal;
-}
-/*webfont*/
-
-/*global variable*/
-$text-black: #333333;
-$text-light-gray: #cccccc;
-$text-gray: #858585;
-$text-darker-gray: #666666;
-
-$line-light-gray: #ebebeb;
-$line-gray: #dedede;
-
-$purple: #cdc0ef;
-$yellow: #f9d57f;
-$pink: #faacbf;
-$blue: #AAD4FB;
-$green: #A8DAB2;
-$gray: #ebebeb;
-$red: #ff0000;
-
-$big-text: 16px;
-$normal-text: 14px;
-$small-text: 13px;
-$mini-text: 10px;
-/*global variable*/
-
-.callout {
-  border-left: 5px solid $red;
-  border-bottom: 1px solid $line-gray;
-  padding: 8px;
-  font-size: $small-text;
-  color: $red;
-  margin: 0;
-}
-
 body {
   margin: 0;
   background: $gray;
@@ -66,7 +18,25 @@ main, footer {
 }
 
 header {
+  position: relative;
 	height: 130px;
+  background-image: url('assets/images/banner-bg.png');
+  .personal-avator {
+    position: absolute;
+    top: 51px;
+    left: 25px;
+    width: 60px;
+    height: 60px;
+  }
+  .personal-profile {
+    position: absolute;
+    top: 82px;
+    left: 110px;
+    color: white;
+    >.name {
+      font-size: $big-text;
+    }
+  }
 }
 
 nav.top-nav {
@@ -134,9 +104,35 @@ nav {
 }
 
 main {
-	height: 351px;
+	/*height: 351px;*/
 	margin-top: 10px;
   overflow-y: auto;
+  section.gift {
+    border-bottom: 1px solid $line-gray;
+    position: relative;
+    >section {
+      display: inline-block;
+    }
+    >section.left {
+      padding: 10px;
+      padding-left: 0;
+      margin-left: 10px;
+      >img {
+        width: 101px;
+        height: 97px;
+      }
+    }
+    >section.right {
+      position: absolute;
+      left: 121px;
+      >.desc {
+        font-size: $big-text;
+        color: $text-darker-gray;
+        margin-top: 14px;
+        margin-bottom: 4px;
+      }
+    }
+  }
 }
 
 footer {
