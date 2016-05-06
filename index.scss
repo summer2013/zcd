@@ -5,19 +5,20 @@ body {
   background: $gray;
 }
 
-header, .top-nav, main, footer {
+
+header.index, .top-nav, main.index, footer.index {
   background: white;
 }
 
-header, .top-nav {
+header.index, .top-nav {
   border-bottom: 1px solid $line-gray;
 }
 
-main, footer {
+main.index, footer.index {
   border-top: 1px solid $line-gray;
 }
 
-header {
+header.index {
   position: relative;
 	height: 130px;
   background-image: url('assets/images/banner-bg.png');
@@ -103,7 +104,7 @@ nav {
   }
 }
 
-main {
+main.index {
 	/*height: 351px;*/
 	margin-top: 10px;
   overflow-y: auto;
@@ -135,7 +136,7 @@ main {
   }
 }
 
-footer {
+footer.index {
 	height: 51px;
   position: fixed;
   bottom: 0;
