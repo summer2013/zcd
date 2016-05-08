@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="indexApp">
 <head>
 	<meta charset="UTF-8">
 	<title>首页</title>
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="node_modules/angular/angular.js"></script>
+  <script>
+    var indexApp = angular.module('indexApp',[]);
+    indexApp.controller('indexController', ['$scope', function($scope) {
+      $scope.openSignModal = function() {
+        <!--window.open('sign.html', '_blank');-->
+        window.open('http://192.168.1.106:3000/sign.html', '_blank');
+      }
+    }]);
+  </script>
 </head>
 <body>
-  <header class="index">
+  <header class="index" ng-controller="indexController">
     <img class="personal-avator" src="assets/images/avator.jpg">
     <div class="personal-profile">
       <span class="name">我是小明</span>
@@ -22,7 +32,7 @@
         <span>微点</span>
       </div>
     </div>
-    <span class="sign-status">
+    <span class="sign-status" ng-click="openSignModal()">
       <i class="iconfont">&#xe600;</i>
       已签到
     </span>
