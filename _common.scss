@@ -88,10 +88,11 @@ $mini-text: 10px;
   top: 23px;
   right: 0;
   display: inline-block;
-  width: 73px;
+  width: 63px;
   height: 26px;
   line-height: 26px;
-  border-radius: 40px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
   font-size: $normal-text;
   padding-left: 5px;
 }
