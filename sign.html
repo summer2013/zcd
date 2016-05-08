@@ -24,23 +24,33 @@
   <section class="calendar">
     <header>
       <i class="iconfont calendar">&#xe608;</i>
-      <span>2015年11月24日</span>
+      <span class="day">2015年11月24日</span>
       <i class="iconfont close">&#xe609;</i>
     </header>
     <section class="month" ng-controller="calendarController">
       <table>
-        <tr>
-          <th ng-repeat="w in weekdays track by $index" ng-bind="w"></th>
-        </tr>
-        <tr ng-repeat="r in days track by $index">
-          <th ng-repeat="d in r track by $index" ng-bind="d"></th>
-        </tr>
+        <thead>
+          <tr>
+            <th ng-repeat="w in weekdays track by $index" ng-bind="w"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="r in days track by $index">
+            <td ng-repeat="d in r track by $index" >
+              <span ng-class="{'next-befor': ($id>=16 && $id <=20) || ($id>=96 && $id <=101),
+                'signed-next-befor': $id==21,
+                'signed-current': $id >=70 && $id<=80}" ng-bind="d">
+              </span>
+              <i class="iconfont member-day" ng-show="$id==80 || $id==81">&#xe607;</i>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </section>
     <footer>
-      <span>已经连续签到3天</span>
-      <span>明天继续签到送10积分</span>
-      <span>今日已赠送5积分</span>
+      <div>已经连续签到3天~</div>
+      <div>明天继续签到送10积分~</div>
+      <div>今日已赠送5积分</div>
     </footer>
   </section>
 </body>
