@@ -3,8 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>首页</title>
+
+  <!--normalize 放在自定义样式前面, 防止覆盖-->
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="node_modules/angular/angular.js"></script>
   <script>
@@ -12,18 +15,26 @@
     indexApp.controller('indexController', ['$scope', function($scope) {
       $scope.openSignModal = function() {
         <!--window.open('sign.html', '_blank');-->
+
+        // 指明了域名我会打不开……
         window.open('http://192.168.1.106:3000/sign.html', '_blank');
       }
     }]);
   </script>
 </head>
 <body>
+
+  <!--黑色的阴影部分和背景图应该区分-->
   <header class="index" ng-controller="indexController">
     <img class="personal-avator" src="assets/images/avator.jpg">
     <div class="personal-profile">
       <span class="name">我是小明</span>
       <span class="level4">vip4</span>
+
+      <!--布局时尽量不要用 br 处理-->
       <br/>
+
+      <!--间距和样式有点问题-->
       <div class="property">
         <span class="point">1000</span>
         <span>积分</span>
@@ -33,6 +44,8 @@
       </div>
     </div>
     <span class="sign-status" ng-click="openSignModal()">
+
+      <!--使用 icon 的 class, 而不是字符代码 (不容易记住)-->
       <i class="iconfont">&#xe600;</i>
       已签到
     </span>
@@ -73,7 +86,11 @@
 	</nav>
   <main class="index">
     <h2 class="callout">热门礼品</h2>
+
+    <!--礼品列表, 考虑用 ul-->
     <section class="gift">
+
+      <!--left 和 right 的命名方式不太好-->
       <section class="left">
         <img src="assets/images/goods1.png" alt="">
       </section>

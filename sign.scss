@@ -36,8 +36,11 @@ section.calendar {
     color: $text-darker-gray;
     >table {
       border-collapse:collapse;
+
+      // 宽度 100%, 高度不指定
       width: 337px;
       height: 278px;
+
       font-size: $normal-text;
       text-align: center;
       background: white;
@@ -46,6 +49,8 @@ section.calendar {
         background: #ffcbca;
         font-size: $big-text;
       }
+
+      // 设置一下 padding
       tr > td {
         position: relative;
         span {

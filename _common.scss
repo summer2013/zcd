@@ -1,6 +1,8 @@
 /*webfont*/
 @font-face {
   font-family: 'iconfont';
+
+  // 移动端 src 不需要写这么多, 保留一个 ttf 就够用
   src: url('//at.alicdn.com/t/font_1462519334_1059072.eot'); /* IE9*/
   src: url('//at.alicdn.com/t/font_1462519334_1059072.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
   url('//at.alicdn.com/t/font_1462519334_1059072.woff') format('woff'), /* chrome、firefox */
@@ -13,6 +15,9 @@
   font-size:16px;font-style:normal;
 }
 /*webfont*/
+
+
+// variable 考虑单开一个文件
 
 /*global variable*/
 $text-black: #333333;
@@ -39,8 +44,11 @@ $mini-text: 10px;
 
 
 .callout {
+
+  // 放大看, 左边和下边的交叉处会出现斜角
   border-left: 5px solid $red;
   border-bottom: 1px solid $line-gray;
+
   padding: 8px;
   font-size: $small-text;
   color: $red;
@@ -50,13 +58,18 @@ $mini-text: 10px;
 /*all kinds of level*/
 .level {
   display: inline-block;
+
+  // 宽度会随字数调整, 不需要固定宽度和高度, 指定 padding-left/right 即可
   width: 41px;
   height: 17px;
+
   line-height: 17px;
   border-radius: 10px;
   text-align: center;
   color: white;
   font-size: $small-text;
+
+  // 作为单独的零件, 不在这里指定 margin-bottom, 写在具体使用的地方
   margin-bottom: 7px;
 }
 .level1 {
@@ -88,12 +101,17 @@ $mini-text: 10px;
   top: 23px;
   right: 0;
   display: inline-block;
+
+  // 不需要指定宽度, height 和 line-height 指定一个就可以
   width: 63px;
   height: 26px;
   line-height: 26px;
+
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
   font-size: $normal-text;
+
+  // 漏了 padding-right
   padding-left: 5px;
 }
 
