@@ -69,6 +69,9 @@ nav.top-nav {
         border-radius: 40px;
         color: white;
         margin-bottom: 8px;
+        .iconfont {
+          font-size: 24px;
+        }
       }
       margin: 0;
     }
@@ -103,6 +106,9 @@ nav.bottom-nav {
       align-items: center;
       >span {
         margin-bottom: 5px;
+        .iconfont {
+          font-size: 22px;
+        }
       }
     }
   }
