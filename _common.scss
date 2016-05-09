@@ -1,13 +1,8 @@
+@import "variable";
 /*webfont*/
 @font-face {
   font-family: 'iconfont';
-
-  // 移动端 src 不需要写这么多, 保留一个 ttf 就够用
-  src: url('//at.alicdn.com/t/font_1462519334_1059072.eot'); /* IE9*/
-  src: url('//at.alicdn.com/t/font_1462519334_1059072.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('//at.alicdn.com/t/font_1462519334_1059072.woff') format('woff'), /* chrome、firefox */
-  url('//at.alicdn.com/t/font_1462519334_1059072.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url('//at.alicdn.com/t/font_1462519334_1059072.svg#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('//at.alicdn.com/t/font_1462519334_1059072.ttf') format('truetype'); /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
 }
 
 .iconfont{
@@ -16,39 +11,8 @@
 }
 /*webfont*/
 
-
-// variable 考虑单开一个文件
-
-/*global variable*/
-$text-black: #333333;
-$text-light-gray: #cccccc;
-$text-gray: #858585;
-$text-darker-gray: #666666;
-
-$line-light-gray: #ebebeb;
-$line-gray: #dedede;
-
-$purple: #cdc0ef;
-$yellow: #f9d57f;
-$pink: #faacbf;
-$blue: #AAD4FB;
-$green: #A8DAB2;
-$gray: #ebebeb;
-$red: #ff0000;
-
-$big-text: 16px;
-$normal-text: 14px;
-$small-text: 13px;
-$mini-text: 10px;
-/*global variable*/
-
-
 .callout {
-
-  // 放大看, 左边和下边的交叉处会出现斜角
   border-left: 5px solid $red;
-  border-bottom: 1px solid $line-gray;
-
   padding: 8px;
   font-size: $small-text;
   color: $red;
@@ -58,19 +22,12 @@ $mini-text: 10px;
 /*all kinds of level*/
 .level {
   display: inline-block;
-
-  // 宽度会随字数调整, 不需要固定宽度和高度, 指定 padding-left/right 即可
-  width: 41px;
-  height: 17px;
-
+  padding: 0 8px;
   line-height: 17px;
   border-radius: 10px;
   text-align: center;
   color: white;
   font-size: $small-text;
-
-  // 作为单独的零件, 不在这里指定 margin-bottom, 写在具体使用的地方
-  margin-bottom: 7px;
 }
 .level1 {
   @extend .level;
@@ -103,6 +60,7 @@ $mini-text: 10px;
   display: inline-block;
 
   // 不需要指定宽度, height 和 line-height 指定一个就可以
+  // 这里需要啊，要垂直居中
   width: 63px;
   height: 26px;
   line-height: 26px;
@@ -112,6 +70,7 @@ $mini-text: 10px;
   font-size: $normal-text;
 
   // 漏了 padding-right
+  // ：）ui稿好像么有
   padding-left: 5px;
 }
 

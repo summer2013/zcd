@@ -4,10 +4,8 @@
 	<meta charset="UTF-8">
 	<title>首页</title>
 
-  <!--normalize 放在自定义样式前面, 防止覆盖-->
-  <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
-
+  <link rel="stylesheet" href="index.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="node_modules/angular/angular.js"></script>
   <script>
@@ -25,6 +23,7 @@
 <body>
 
   <!--黑色的阴影部分和背景图应该区分-->
+  <!--是图片俺忘了border及border-radius吗?-->
   <header class="index" ng-controller="indexController">
     <img class="personal-avator" src="assets/images/avator.jpg">
     <div class="personal-profile">
@@ -46,12 +45,14 @@
     <span class="sign-status" ng-click="openSignModal()">
 
       <!--使用 icon 的 class, 而不是字符代码 (不容易记住)-->
-      <i class="iconfont">&#xe600;</i>
+      <!--咋用，好像用错啦-->
+      <!--<i class="iconfont">&#xe600;</i>-->
+      <i class="iconfont shop"></i>
       已签到
     </span>
   </header>
 	<nav class="top-nav">
-		<a>
+		<a class="real-gift">
 			<figure>
         <span>
           <i class="iconfont">&#xe600;</i>
@@ -59,7 +60,7 @@
 				<figcaption>实物礼品</figcaption>
 			</figure>
 		</a>
-		<a>
+		<a class="virtual-gift">
 			<figure>
         <span>
           <i class="iconfont">&#xe605;</i>
@@ -67,7 +68,7 @@
 				<figcaption>虚拟礼品</figcaption>
 			</figure>
 		</a>
-		<a>
+		<a class="tb-privilege">
 			<figure>
         <span>
           <i class="iconfont">&#xe604;</i>
@@ -75,7 +76,7 @@
 				<figcaption>淘宝优惠</figcaption>
 			</figure>
 		</a>
-		<a>
+		<a class="game-center">
 			<figure>
         <span>
           <i class="iconfont">&#xe603;</i>

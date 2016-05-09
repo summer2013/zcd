@@ -5,8 +5,7 @@ body {
   background: $gray;
 }
 
-// 一般选择器写 class 就可以了, 不用 tag
-header.index, .top-nav, main.index, footer.index {
+.index, .top-nav {
   background: white;
 }
 
@@ -40,6 +39,12 @@ header.index {
   }
 }
 
+nav {
+  a {
+    display: inline-block;
+  }
+}
+
 nav.top-nav {
 	height: 86px;
   display: flex;
@@ -47,6 +52,7 @@ nav.top-nav {
   align-items: center;
 
   // 这些标签最好都有 class
+  /*这是公共a标签，可以不用class不？ */
   a {
     color: $text-gray;
     font-size: $small-text;
@@ -60,8 +66,6 @@ nav.top-nav {
         align-items: center;
         width: 40px;
         height: 40px;
-        /*border-top-left-radius: 30px;*/
-        /*border-bottom-left-radius: 30px;*/
         border-radius: 40px;
         color: white;
         margin-bottom: 8px;
@@ -70,17 +74,16 @@ nav.top-nav {
     }
   }
 
-  // 此处可以给每项写一个 class, 不然万一顺序变了, 颜色就跟着变了
- a:nth-child(1) > figure > span{
+  a.real-gift > figure > span{
     background: $yellow;
   }
-  a:nth-child(2) > figure > span{
+  a.virtual-gift> figure > span{
     background: $blue;
   }
-  a:nth-child(3) > figure > span{
+  a.tb-privilege > figure > span{
     background: $pink;
   }
-  a:nth-child(4) > figure > span{
+  a.game-center > figure > span{
     background: $purple;
   }
 }
@@ -104,19 +107,12 @@ nav.bottom-nav {
     }
   }
 }
-nav {
-
-  // 公共的属性定义在前面
-  a {
-    display: inline-block;
-  }
-}
 
 main.index {
 	margin-top: 10px;
   overflow-y: auto;
   section.gift {
-    border-bottom: 1px solid $line-gray;
+    border-top: 1px solid $line-gray;
     position: relative;
     >section {
       display: inline-block;
@@ -128,6 +124,7 @@ main.index {
       >img {
 
         // 宽高有点诡异
+        // 是滴，稍后改
         width: 101px;
         height: 97px;
       }
@@ -140,6 +137,9 @@ main.index {
         color: $text-darker-gray;
         margin-top: 14px;
         margin-bottom: 4px;
+      }
+      >span[class^='level'] {
+        margin-bottom: 7px;
       }
     }
   }
