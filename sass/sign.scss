@@ -2,8 +2,10 @@ section.calendar {
   width: 359px;
   height: 459px;
   background-color: #FF6968;
-  position: relative;
-  margin: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
   >header {
     color: white;
     font-size: $big-text;
