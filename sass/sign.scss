@@ -1,46 +1,43 @@
-section.calendar {
-  width: 359px;
-  height: 459px;
-  background-color: #FF6968;
+section.calendar-mask {
   position: absolute;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+section.calendar {
+  width: 90%;
+  background-color: #FF6968;
+  box-sizing: border-box;
+  padding: 10px;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  z-index: 20;
   >header {
     color: white;
     font-size: $big-text;
     position: relative;
     .calendar {
-      position: absolute;
-      top: 18px;
-      left: 10px;
-    }
-    .day {
-      position: absolute;
-      top: 18px;
-      left: 40px;
+      font-size: 22px;
     }
     .close {
       position: absolute;
-      top: 10px;
-      right: 10px;
+      top: -3px;
+      right: -3px;
       font-size: 28px;
     }
   }
   >section.month {
-    position: absolute;
-    top: 50px;
-    left: 10px;
+    margin: 18px 0;
     border: 1px solid $line-gray;
     border-radius: 5px;
     color: $text-darker-gray;
     >table {
       border-collapse:collapse;
-
-      // 宽度 100%, 高度不指定
-      width: 337px;
-      height: 278px;
-
+      width: 100%;
       font-size: $normal-text;
       text-align: center;
       background: white;
@@ -49,10 +46,9 @@ section.calendar {
         background: #ffcbca;
         font-size: $big-text;
       }
-
-      // 设置一下 padding
       tr > td {
         position: relative;
+        padding: 5px;
         span {
           display: inline-block;
           width: 32px;
@@ -82,7 +78,6 @@ section.calendar {
   }
 
   >footer {
-    position: absolute;
     top: 346px;
     color: white;
     width: 100%;
