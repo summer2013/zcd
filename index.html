@@ -5,35 +5,25 @@
 	<title>首页</title>
 
   <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="sass/index.css">
+  <link rel="stylesheet" href="http://at.alicdn.com/t/font_1462519334_3829813.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="node_modules/angular/angular.js"></script>
   <script>
     var indexApp = angular.module('indexApp',[]);
     indexApp.controller('indexController', ['$scope', function($scope) {
       $scope.openSignModal = function() {
-        <!--window.open('sign.html', '_blank');-->
-
-        // 指明了域名我会打不开……
-        window.open('http://192.168.1.106:3000/sign.html', '_blank');
+        window.open('sign.html', '_blank');
       }
     }]);
   </script>
 </head>
 <body>
-
-  <!--黑色的阴影部分和背景图应该区分-->
-  <!--是图片俺忘了border及border-radius吗?-->
   <header class="index" ng-controller="indexController">
     <img class="personal-avator" src="assets/images/avator.jpg">
     <div class="personal-profile">
       <span class="name">我是小明</span>
       <span class="level4">vip4</span>
-
-      <!--布局时尽量不要用 br 处理-->
-      <br/>
-
-      <!--间距和样式有点问题-->
       <div class="property">
         <span class="point">1000</span>
         <span>积分</span>
@@ -43,11 +33,7 @@
       </div>
     </div>
     <span class="sign-status" ng-click="openSignModal()">
-
-      <!--使用 icon 的 class, 而不是字符代码 (不容易记住)-->
-      <!--咋用，好像用错啦-->
-      <i class="iconfont">&#xe600;</i>
-      <!--<i class="iconfont shop"></i>-->
+      <i class="iconfont icon-shop"></i>
       已签到
     </span>
   </header>
@@ -55,7 +41,7 @@
 		<a class="real-gift">
 			<figure>
         <span>
-          <i class="iconfont">&#xe600;</i>
+          <i class="iconfont icon-gift"></i>
         </span>
 				<figcaption>实物礼品</figcaption>
 			</figure>
@@ -63,7 +49,7 @@
 		<a class="virtual-gift">
 			<figure>
         <span>
-          <i class="iconfont">&#xe605;</i>
+          <i class="iconfont icon-quan"></i>
         </span>
 				<figcaption>虚拟礼品</figcaption>
 			</figure>
@@ -71,7 +57,7 @@
 		<a class="tb-privilege">
 			<figure>
         <span>
-          <i class="iconfont">&#xe604;</i>
+          <i class="iconfont icon-youhuiquan"></i>
         </span>
 				<figcaption>淘宝优惠</figcaption>
 			</figure>
@@ -79,7 +65,7 @@
 		<a class="game-center">
 			<figure>
         <span>
-          <i class="iconfont">&#xe603;</i>
+          <i class="iconfont icon-game"></i>
         </span>
 				<figcaption>游戏专区</figcaption>
 			</figure>
@@ -87,51 +73,49 @@
 	</nav>
   <main class="index">
     <h2 class="callout">热门礼品</h2>
-
-    <!--礼品列表, 考虑用 ul-->
-    <section class="gift">
-
-      <!--left 和 right 的命名方式不太好-->
-      <section class="left">
-        <img src="assets/images/goods1.png" alt="">
-      </section>
-      <section class="right">
-        <h3 class="desc">TYAKASHA2015塔卡沙复刻 女奶 白可爱几何拼接织花毛衣毛衣毛...</h3>
-        <span class="level4">vp4</span>
-        <br/>
-        <div class="property">
-          <span class="point">2000</span>
-          <span>积分</span>
-          <span>&nbsp;+&nbsp;</span>
-          <span class="wd">2000</span>
-          <span>微点</span>
+    <ul class="gift">
+      <li>
+        <div class="thumbnail">
+          <img src="assets/images/goods1.png" alt="">
         </div>
-      </section>
-    </section>
-    <section class="gift">
-      <section class="left">
-        <img src="assets/images/goods1.png" alt="">
-      </section>
-      <section class="right">
-        <h3 class="desc">TYAKASHA2015塔卡沙复刻 女奶 白可爱几何拼接织花毛衣毛衣毛...</h3>
-        <span class="level4">vp4</span>
-        <br/>
-        <div class="property">
-          <span class="point">2000</span>
-          <span>积分</span>
-          <span>&nbsp;+&nbsp;</span>
-          <span class="wd">2000</span>
-          <span>微点</span>
+        <div class="detail">
+          <h3 class="desc">TYAKASHA2015塔卡沙复刻 女奶 白可爱几何拼接织花毛衣毛衣毛...</h3>
+          <span class="level4">vp4</span>
+          <br/>
+          <div class="property">
+            <span class="point">2000</span>
+            <span>积分</span>
+            <span>&nbsp;+&nbsp;</span>
+            <span class="wd">2000</span>
+            <span>微点</span>
+          </div>
         </div>
-      </section>
-    </section>
+      </li>
+      <li>
+        <div class="thumbnail">
+          <img src="assets/images/goods1.png" alt="">
+        </div>
+        <div class="detail">
+          <h3 class="desc">TYAKASHA2015塔卡沙复刻 女奶 白可爱几何拼接织花毛衣毛衣毛...</h3>
+          <span class="level4">vp4</span>
+          <br/>
+          <div class="property">
+            <span class="point">2000</span>
+            <span>积分</span>
+            <span>&nbsp;+&nbsp;</span>
+            <span class="wd">2000</span>
+            <span>微点</span>
+          </div>
+        </div>
+      </li>
+    </ul>
   </main>
 	<footer class="index">
     <nav class="bottom-nav">
       <a>
         <figure>
           <span>
-            <i class="iconfont">&#xe601;</i>
+            <i class="iconfont icon-house1"></i>
           </span>
           <figcaption>积分互动</figcaption>
         </figure>
@@ -139,7 +123,7 @@
       <a>
         <figure>
           <span>
-            <i class="iconfont">&#xe601;</i>
+            <i class="iconfont icon-house1"></i>
           </span>
           <figcaption>礼品箱</figcaption>
         </figure>
@@ -147,7 +131,7 @@
       <a>
         <figure>
           <span>
-            <i class="iconfont">&#xe601;</i>
+            <i class="iconfont icon-house1"></i>
           </span>
           <figcaption>个人中心</figcaption>
         </figure>
@@ -155,7 +139,7 @@
       <a>
         <figure>
           <span>
-            <i class="iconfont">&#xe601;</i>
+            <i class="iconfont icon-house1"></i>
           </span>
           <figcaption>店铺首页</figcaption>
         </figure>

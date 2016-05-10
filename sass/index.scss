@@ -1,9 +1,6 @@
+@import "variable";
 @import "common";
-
-body {
-  margin: 0;
-  background: $gray;
-}
+@import "sign";
 
 .index, .top-nav {
   background: white;
@@ -20,13 +17,15 @@ main.index, footer.index {
 header.index {
   position: relative;
 	height: 130px;
-  background-image: url('assets/images/banner-bg.png');
+  background-image: url('../assets/images/banner-bg.png');
   .personal-avator {
     position: absolute;
     top: 51px;
     left: 25px;
     width: 60px;
     height: 60px;
+    border: 1px solid white;
+    border-radius: 5px;
   }
   .personal-profile {
     position: absolute;
@@ -35,6 +34,7 @@ header.index {
     color: white;
     >.name {
       font-size: $big-text;
+      margin-right: 10px;
     }
   }
 }
@@ -51,9 +51,7 @@ nav.top-nav {
   justify-content: space-around;
   align-items: center;
 
-  // 这些标签最好都有 class
-  /*这是公共a标签，可以不用class不？ */
-  a {
+  .top-nav-item {
     color: $text-gray;
     font-size: $small-text;
     figure {
@@ -77,16 +75,20 @@ nav.top-nav {
     }
   }
 
-  a.real-gift > figure > span{
+  .real-gift, .virtual-gift, .tb-privilege, .game-center {
+    @extend .top-nav-item;
+  }
+
+  .real-gift > figure > span{
     background: $yellow;
   }
-  a.virtual-gift> figure > span{
+  .virtual-gift> figure > span{
     background: $blue;
   }
-  a.tb-privilege > figure > span{
+  .tb-privilege > figure > span{
     background: $pink;
   }
-  a.game-center > figure > span{
+  .game-center > figure > span{
     background: $purple;
   }
 }
@@ -117,35 +119,37 @@ nav.bottom-nav {
 main.index {
 	margin-top: 10px;
   overflow-y: auto;
-  section.gift {
+  ul.gift {
+    list-style-type: none;
     border-top: 1px solid $line-gray;
-    position: relative;
-    >section {
-      display: inline-block;
-    }
-    >section.left {
-      padding: 10px;
-      padding-left: 0;
-      margin-left: 10px;
-      >img {
-
-        // 宽高有点诡异
-        // 是滴，稍后改
-        width: 101px;
-        height: 97px;
+    margin: 0;
+    padding: 0;
+    li {
+      position: relative;
+      >div {
+        display: inline-block;
       }
-    }
-    >section.right {
-      position: absolute;
-      left: 121px;
-      >.desc {
-        font-size: $big-text;
-        color: $text-darker-gray;
-        margin-top: 14px;
-        margin-bottom: 4px;
+      >.thumbnail {
+        padding: 10px;
+        padding-left: 0;
+        margin-left: 10px;
+        >img {
+          width: 100px;
+          height: 100px;
+        }
       }
-      >span[class^='level'] {
-        margin-bottom: 7px;
+      >.detail {
+        position: absolute;
+        left: 121px;
+        >.desc {
+          font-size: $big-text;
+          color: $text-darker-gray;
+          margin-top: 14px;
+          margin-bottom: 4px;
+        }
+        >span[class^='level'] {
+          margin-bottom: 7px;
+        }
       }
     }
   }
