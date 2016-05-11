@@ -1,0 +1,163 @@
+<header class="index">
+  <img class="personal-avator" src="assets/images/avator.jpg">
+  <div class="personal-profile">
+    <span class="name">我是小明</span>
+    <span class="level4">vip4</span>
+    <div class="property">
+      <span class="point">1000</span>
+      <span>积分</span>
+      <span>&nbsp;|&nbsp;</span>
+      <span class="wd">1000</span>
+      <span>微点</span>
+    </div>
+  </div>
+  <span class="sign-status" ng-click="openSignModal()">
+    <i class="iconfont icon-shop"></i>
+    已签到
+  </span>
+</header>
+<nav class="top-nav">
+  <a class="real-gift">
+    <figure>
+      <span>
+        <i class="iconfont icon-gift"></i>
+      </span>
+      <figcaption>实物礼品</figcaption>
+    </figure>
+  </a>
+  <a class="virtual-gift">
+    <figure>
+      <span>
+        <i class="iconfont icon-quan"></i>
+      </span>
+      <figcaption>虚拟礼品</figcaption>
+    </figure>
+  </a>
+  <a class="tb-privilege">
+    <figure>
+      <span>
+        <i class="iconfont icon-youhuiquan"></i>
+      </span>
+      <figcaption>淘宝优惠</figcaption>
+    </figure>
+  </a>
+  <a class="game-center">
+    <figure>
+      <span>
+        <i class="iconfont icon-game"></i>
+      </span>
+      <figcaption>游戏专区</figcaption>
+    </figure>
+  </a>
+</nav>
+<main class="index">
+  <h2 class="callout">热门礼品</h2>
+  <ul class="gift">
+    <li>
+      <div class="thumbnail">
+        <img src="assets/images/goods1.png" alt="">
+      </div>
+      <div class="detail">
+        <h3 class="desc">TYAKASHA2015塔卡沙复刻 女奶 白可爱几何拼接织花毛衣毛衣毛...</h3>
+        <span class="level4">vp4</span>
+        <br/>
+        <div class="property">
+          <span class="point">2000</span>
+          <span>积分</span>
+          <span>&nbsp;+&nbsp;</span>
+          <span class="wd">2000</span>
+          <span>微点</span>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="thumbnail">
+        <img src="assets/images/goods1.png" alt="">
+      </div>
+      <div class="detail">
+        <h3 class="desc">TYAKASHA2015塔卡沙复刻 女奶 白可爱几何拼接织花毛衣毛衣毛...</h3>
+        <span class="level4">vp4</span>
+        <br/>
+        <div class="property">
+          <span class="point">2000</span>
+          <span>积分</span>
+          <span>&nbsp;+&nbsp;</span>
+          <span class="wd">2000</span>
+          <span>微点</span>
+        </div>
+      </div>
+    </li>
+  </ul>
+</main>
+<footer class="index">
+  <nav class="bottom-nav">
+    <a>
+      <figure>
+        <span>
+          <i class="iconfont icon-house1"></i>
+        </span>
+        <figcaption>积分互动</figcaption>
+      </figure>
+    </a>
+    <a>
+      <figure>
+        <span>
+          <i class="iconfont icon-house1"></i>
+        </span>
+        <figcaption>礼品箱</figcaption>
+      </figure>
+    </a>
+    <a>
+      <figure>
+        <span>
+          <i class="iconfont icon-house1"></i>
+        </span>
+        <figcaption>个人中心</figcaption>
+      </figure>
+    </a>
+    <a>
+      <figure>
+        <span>
+          <i class="iconfont icon-house1"></i>
+        </span>
+        <figcaption>店铺首页</figcaption>
+      </figure>
+    </a>
+  </nav>
+</footer>
+<!--begin 签到对话框-->
+<section class="calendar-mask" ng-show="showSignModal">
+  <section class="calendar">
+    <header>
+      <i class="iconfont calendar icon-calendarzhuanhuan"></i>
+      <span class="day">2015年11月24日</span>
+      <i class="iconfont close icon-close01" ng-click="close()"></i>
+    </header>
+    <section class="month">
+      <table>
+        <thead>
+          <tr>
+            <th ng-repeat="w in weekdays track by $index" ng-bind="w"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="r in days track by $index">
+            <td ng-repeat="d in r track by $index" >
+              <span ng-class="{'next-befor': ($id>=16 && $id <=20) || ($id>=96 && $id <=101),
+                'signed-next-befor': $id==21,
+                'signed-current': $id >=70 && $id<=80}" ng-bind="d">
+              </span>
+              <i class="iconfont member-day" ng-show="$id==80 || $id==81">&#xe607;</i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <footer>
+      <div>已经连续签到3天~</div>
+      <div>明天继续签到送10积分~</div>
+      <div>今日已赠送5积分</div>
+    </footer>
+  </section>
+</section>
+<!--end 签到对话框-->
