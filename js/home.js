@@ -1,4 +1,4 @@
-var indexApp = angular.module('indexApp', ["ui.router"]);
+var indexApp = angular.module('indexApp', ["ui.router", "dropDownMenuApp"]);
 indexApp.config(function($stateProvider, $urlRouterProvider){
 
   // For any unmatched url, send to /route1
@@ -26,9 +26,6 @@ indexApp.config(function($stateProvider, $urlRouterProvider){
   })
   .state('real-gifts', {
     url: '/real-gifts',
-    templateUrl: "html/real-gifts.html",
-    controller: function($scope) {
-
-    }
+    templateUrl: "html/real-gifts.html"
   })
 })

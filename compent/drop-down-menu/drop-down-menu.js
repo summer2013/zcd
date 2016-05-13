@@ -44,6 +44,8 @@ dropDownMenu.controller('DropDownMenuController', ['$scope', function($scope) {
 }])
 .directive('dropDownMenu', function(){
   return {
-    templateUrl: 'drop-down-menu.html'
+    restrict: 'E',
+    templateUrl: 'compent/drop-down-menu/drop-down-menu.html',
+    controller:  'DropDownMenuController'
   }
 });

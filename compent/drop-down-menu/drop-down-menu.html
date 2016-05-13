@@ -1,57 +1,44 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="dropDownMenuApp">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link rel="stylesheet" href="drop-down-menu.css">
-  <link rel="stylesheet" href="http://at.alicdn.com/t/font_1463109156_1808963.css">
-</head>
-<body ng-controller="DropDownMenuController">
-  <section class="drop-down-menu">
-    <nav class="header">
+<section class="drop-down-menu">
+  <nav class="header">
+    <ul>
+      <li ng-class="{'active': headerActive}" ng-click="switchList()">
+        <span>搜狐视频</span>
+        <i class="iconfont icon-fold"></i>
+      </li>
+      <li ng-class="{'active': exchangeActive}" ng-click="switchExchangeList()">
+        <span>兑换</span>
+        <i class="iconfont icon-fold"></i>
+      </li>
+      <li ng-class="{'active': mineExchangeActive}" ng-click="switchMineExchange()">
+        <i class="iconfont" ng-class="{'icon-check': mineExchangeActive, 'icon-circle': !mineExchangeActive}"></i>
+        <span>我能兑换</span>
+      </li>
+    </ul>
+  </nav>
+  <section class="list" ng-show="showList">
+    <nav class="sub-nav1">
       <ul>
-        <li ng-class="{'active': headerActive}" ng-click="switchList()">
-          <span>搜狐视频</span>
-          <i class="iconfont icon-fold"></i>
-        </li>
-        <li ng-class="{'active': exchangeActive}" ng-click="switchExchangeList()">
-          <span>兑换</span>
-          <i class="iconfont icon-fold"></i>
-        </li>
-        <li ng-class="{'active': mineExchangeActive}" ng-click="switchMineExchange()">
-          <i class="iconfont" ng-class="{'icon-check': mineExchangeActive, 'icon-circle': !mineExchangeActive}"></i>
-          <span>我能兑换</span>
+        <li ng-repeat="m in subMenus1 track by $index" ng-bind="m.name" ng-class="{'active': $index==2}">
         </li>
       </ul>
     </nav>
-    <section class="list" ng-show="showList">
-      <nav class="sub-nav1">
-        <ul>
-          <li ng-repeat="m in subMenus1 track by $index" ng-bind="m.name" ng-class="{'active': $index==2}">
-          </li>
-        </ul>
-      </nav>
-      <nav class="sub-nav2">
-        <ul>
-          <li ng-repeat="m in subMenus1[2].children" ng-class="{'active': $index==1}">
-            <span ng-bind="m.name"></span>
-            <i class="iconfont icon-check-item" ng-show="$index==1"></i>
-          </li>
-        </ul>
-      </nav>
-    </section>
-    <section class="list exchange-list" ng-show="showExchangeList">
-      <nav class="sub-nav2">
-        <ul>
-          <li ng-repeat="m in subMenus2 track by $index" ng-class="{'active': $index==1}">
-            <span ng-bind="m.name"></span>
-            <i class="iconfont icon-check-item" ng-show="$index==1"></i>
-          </li>
-        </ul>
-      </nav>
-    </section>
+    <nav class="sub-nav2">
+      <ul>
+        <li ng-repeat="m in subMenus1[2].children" ng-class="{'active': $index==1}">
+          <span ng-bind="m.name"></span>
+          <i class="iconfont icon-check-item" ng-show="$index==1"></i>
+        </li>
+      </ul>
+    </nav>
   </section>
-  <script src="../../node_modules/angular/angular.js"></script>
-  <script src="drop-down-menu.js"></script>
-</body>
-</html>
+  <section class="list exchange-list" ng-show="showExchangeList">
+    <nav class="sub-nav2">
+      <ul>
+        <li ng-repeat="m in subMenus2 track by $index" ng-class="{'active': $index==1}">
+          <span ng-bind="m.name"></span>
+          <i class="iconfont icon-check-item" ng-show="$index==1"></i>
+        </li>
+      </ul>
+    </nav>
+  </section>
+</section>
