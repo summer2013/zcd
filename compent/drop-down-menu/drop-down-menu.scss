@@ -1,33 +1,42 @@
 @import "../../sass/variable";
 @import "../../sass/common";
 .drop-down-menu {
+  font-family: Lantinghei SC;
   ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    font-size: $normal-text;
-    color: $text-gray;
+    color: $text-black;
     li {
       display: inline-block;
     }
+    li.active {
+      position: relative;
+      color: $red;
+      .icon-fold {
+        display: inline-block;
+        transform: rotate(180deg);
+      }
+      .icon-check-item {
+        position: absolute;
+        top: 15px;
+        right: 50px;
+      }
+    }
   }
   .header {
-    position: relative;
+    font-size: $normal-text;
     >ul {
-      background: white;
+      background: #f8f9f9;
       border-bottom: 1px solid $line-gray;
       >li {
         border-right: 1px solid $line-gray;
         width: 32%;
         margin: 10px 0;
         text-align: center;
-        position: relative;
       }
       >li:last-child {
         border-right: none;
-      }
-      >li.active {
-        color: red;
       }
     }
   }
@@ -35,41 +44,44 @@
     display: inline-flex;
     border-bottom: 1px solid $line-gray;
     .sub-nav {
-      width: 50%;
       display: inline-block;
       height: 100%;
       font-size: $big-text;
-      ul {
-        li {
-          border-right: 1px solid $line-gray;
-          border-bottom: 1px solid $line-gray;
-          width: 100%;
-          padding: 10px 0 10px 20px;
-          box-sizing: border-box;
-        }
-        li:last-child {
-          border-bottom: none;
-        }
+      li {
+        width: 100%;
+        border-right: 1px solid $line-gray;
+        border-bottom: 1px solid $line-gray;
+        padding: 12px 0;
+        box-sizing: border-box;
+      }
+      li:last-child {
+        border-bottom: none;
       }
     }
     .sub-nav1 {
       @extend .sub-nav;
       background-color: #f2f2f2;
+      width: 40%;
+      li {
+        padding-left: 20px;
+      }
       li.active {
-        color: red;
-        background-color: white;
+        background-color: #f8f9f9;
         border-right: 0;
       }
     }
     .sub-nav2 {
       @extend .sub-nav;
-      left: 50%;
-      background-color: white;
-      li.active {
-        color: red;
+      width: 60%;
+      background-color: #f8f9f9;
+      li {
+        margin-left: 20px;
       }
     }
-
+  }
+  .exchange-list > .sub-nav2{
+    width: 100%;
+    background: #f8f9f9;
   }
 
 }
